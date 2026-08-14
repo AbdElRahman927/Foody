@@ -19,7 +19,9 @@ class AppTheme {
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
-      
+      filled: true,
+      fillColor: AppColors.surfaceWhite,
+      hintStyle: TextStyle(color: AppColors.textSecondaryLightGrey),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(AppRaduis.medium),
         borderSide: const BorderSide(color: AppColors.border),
@@ -52,8 +54,5 @@ class AppTheme {
       labelLarge: AppTextStyles.labelLarge,
       labelMedium: AppTextStyles.labelMedium,
     ),
-    
-    
-    
   );
 }

@@ -1,0 +1,323 @@
+<svg
+  viewBox="0 0 320 260"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="100%"
+  height="100%"
+>
+  <!-- Background circle -->
+  <circle
+    cx="160"
+    cy="130"
+    r="110"
+    fill="#FFF3EE"
+  />
+
+  <!-- First restaurant card -->
+  <rect
+    x="44"
+    y="48"
+    width="100"
+    height="76"
+    rx="14"
+    fill="white"
+  />
+
+  <rect
+    x="44"
+    y="48"
+    width="100"
+    height="76"
+    rx="14"
+    stroke="#FFE0CE"
+    stroke-width="1.5"
+  />
+
+  <!-- First card image area -->
+  <rect
+    x="44"
+    y="48"
+    width="100"
+    height="42"
+    rx="14"
+    fill="#FFE0CE"
+  />
+
+  <rect
+    x="44"
+    y="76"
+    width="100"
+    height="14"
+    fill="#FFE0CE"
+  />
+
+  <!-- Food illustration -->
+  <circle
+    cx="72"
+    cy="69"
+    r="12"
+    fill="#FFB627"
+    opacity="0.4"
+  />
+
+  <circle
+    cx="88"
+    cy="64"
+    r="8"
+    fill="#FF6B35"
+    opacity="0.3"
+  />
+
+  <circle
+    cx="104"
+    cy="69"
+    r="10"
+    fill="#FF8C5A"
+    opacity="0.35"
+  />
+
+  <!-- First card text -->
+  <text
+    x="54"
+    y="106"
+    font-size="9"
+    fill="#1A1A2E"
+    font-family="Poppins"
+    font-weight="600"
+  >
+    Sakura Garden
+  </text>
+
+  <text
+    x="54"
+    y="118"
+    font-size="7.5"
+    fill="#6B7280"
+    font-family="Poppins"
+  >
+    ★ 4.8 · Japanese
+  </text>
+
+  <!-- First card heart -->
+  <g transform="translate(124, 58)">
+    <circle
+      cx="0"
+      cy="0"
+      r="11"
+      fill="#FF6B35"
+    />
+
+    <path
+      d="M0 4.5 C0 4.5 -5.5 1 -5.5 -2 C-5.5 -4.5 -3.2 -5.5 0 -3 C3.2 -5.5 5.5 -4.5 5.5 -2 C5.5 1 0 4.5 0 4.5Z"
+      fill="white"
+    />
+  </g>
+
+  <!-- Second restaurant card -->
+  <rect
+    x="176"
+    y="48"
+    width="100"
+    height="76"
+    rx="14"
+    fill="white"
+  />
+
+  <rect
+    x="176"
+    y="48"
+    width="100"
+    height="76"
+    rx="14"
+    stroke="#FFE0CE"
+    stroke-width="1.5"
+  />
+
+  <!-- Second card image area -->
+  <rect
+    x="176"
+    y="48"
+    width="100"
+    height="42"
+    rx="14"
+    fill="#FFF3EE"
+  />
+
+  <rect
+    x="176"
+    y="76"
+    width="100"
+    height="14"
+    fill="#FFF3EE"
+  />
+
+  <!-- Food illustration -->
+  <circle
+    cx="196"
+    cy="69"
+    r="11"
+    fill="#FF6B35"
+    opacity="0.3"
+  />
+
+  <circle
+    cx="214"
+    cy="63"
+    r="9"
+    fill="#FFB627"
+    opacity="0.4"
+  />
+
+  <circle
+    cx="230"
+    cy="70"
+    r="12"
+    fill="#FF8C5A"
+    opacity="0.25"
+  />
+
+  <!-- Second card text -->
+  <text
+    x="186"
+    y="106"
+    font-size="9"
+    fill="#1A1A2E"
+    font-family="Poppins"
+    font-weight="600"
+  >
+    Bella Cucina
+  </text>
+
+  <text
+    x="186"
+    y="118"
+    font-size="7.5"
+    fill="#6B7280"
+    font-family="Poppins"
+  >
+    ★ 4.6 · Italian
+  </text>
+
+  <!-- Second card heart -->
+  <g transform="translate(255, 58)">
+    <circle
+      cx="0"
+      cy="0"
+      r="11"
+      fill="#FF6B35"
+    />
+
+    <path
+      d="M0 4.5 C0 4.5 -5.5 1 -5.5 -2 C-5.5 -4.5 -3.2 -5.5 0 -3 C3.2 -5.5 5.5 -4.5 5.5 -2 C5.5 1 0 4.5 0 4.5Z"
+      fill="white"
+    />
+  </g>
+
+  <!-- Bottom large card -->
+  <rect
+    x="80"
+    y="140"
+    width="160"
+    height="90"
+    rx="16"
+    fill="white"
+  />
+
+  <rect
+    x="80"
+    y="140"
+    width="160"
+    height="90"
+    rx="16"
+    stroke="#FFE0CE"
+    stroke-width="1.5"
+  />
+
+  <!-- Bottom card image area -->
+  <rect
+    x="80"
+    y="140"
+    width="160"
+    height="52"
+    rx="16"
+    fill="#FFEDE0"
+  />
+
+  <rect
+    x="80"
+    y="178"
+    width="160"
+    height="14"
+    fill="#FFEDE0"
+  />
+
+  <!-- Food illustration -->
+  <circle
+    cx="112"
+    cy="165"
+    r="14"
+    fill="#FF6B35"
+    opacity="0.35"
+  />
+
+  <circle
+    cx="134"
+    cy="158"
+    r="10"
+    fill="#FFB627"
+    opacity="0.4"
+  />
+
+  <circle
+    cx="158"
+    cy="165"
+    r="13"
+    fill="#FF8C5A"
+    opacity="0.3"
+  />
+
+  <circle
+    cx="178"
+    cy="160"
+    r="8"
+    fill="#FF6B35"
+    opacity="0.25"
+  />
+
+  <!-- Bottom card text -->
+  <text
+    x="96"
+    y="208"
+    font-size="10"
+    fill="#1A1A2E"
+    font-family="Poppins"
+    font-weight="600"
+  >
+    The Spice Route
+  </text>
+
+  <text
+    x="96"
+    y="222"
+    font-size="8"
+    fill="#6B7280"
+    font-family="Poppins"
+  >
+    ★ 4.9 · Indian Fusion
+  </text>
+
+  <!-- Bottom card heart -->
+  <g transform="translate(222, 153)">
+    <circle
+      cx="0"
+      cy="0"
+      r="12"
+      fill="#FF6B35"
+    />
+
+    <path
+      d="M0 4.5 C0 4.5 -5.5 1 -5.5 -2 C-5.5 -4.5 -3.2 -5.5 0 -3 C3.2 -5.5 5.5 -4.5 5.5 -2 C5.5 1 0 4.5 0 4.5Z"
+      fill="white"
+    />
+  </g>
+</svg>

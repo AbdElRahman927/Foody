@@ -1,3 +1,4 @@
+using Foody_backend.Interfaces;
 using Foody_backend.services;
 using Foody_Backend.Data;
 using Foody_Backend.Interfaces;
@@ -19,6 +20,9 @@ builder.Services.AddDbContext<AppDbContext>(options=>options.UseSqlServer(builde
 
 //authservices
 builder.Services.AddScoped<IAuthService, AuthService>();
+
+// RestaurantService
+builder.Services.AddScoped<IRestaurantService, RestaurantService>();
 
 //jwt auth
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");

@@ -72,5 +72,26 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foody_Backend.Controllers.RestaurantController",
+    "Method": "GetRestaurants",
+    "RelativePath": "api/restaurants",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "cuisine",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

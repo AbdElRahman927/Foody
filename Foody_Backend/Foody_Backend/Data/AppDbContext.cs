@@ -9,5 +9,7 @@ namespace Foody_Backend.Data
             : base(options) { }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Restaurant> Restaurants { get; set;}
     }
 }

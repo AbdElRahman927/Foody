@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 320 260"
+    width="320"
+    height="260"
+    fill="none">
+
+    <!-- Map background -->
+    <rect
+        x="30"
+        y="40"
+        width="260"
+        height="180"
+        rx="20"
+        fill="#FFF3EE"/>
+
+    <rect
+        x="30"
+        y="40"
+        width="260"
+        height="180"
+        rx="20"
+        stroke="#FFE0CE"
+        stroke-width="1.5"/>
+
+    <!-- Map grid lines -->
+    <line
+        x1="30"
+        y1="100"
+        x2="290"
+        y2="100"
+        stroke="#FFD0B5"
+        stroke-width="0.8"
+        stroke-dasharray="6 4"/>
+
+    <line
+        x1="30"
+        y1="150"
+        x2="290"
+        y2="150"
+        stroke="#FFD0B5"
+        stroke-width="0.8"
+        stroke-dasharray="6 4"/>
+
+    <line
+        x1="100"
+        y1="40"
+        x2="100"
+        y2="220"
+        stroke="#FFD0B5"
+        stroke-width="0.8"
+        stroke-dasharray="6 4"/>
+
+    <line
+        x1="170"
+        y1="40"
+        x2="170"
+        y2="220"
+        stroke="#FFD0B5"
+        stroke-width="0.8"
+        stroke-dasharray="6 4"/>
+
+    <line
+        x1="230"
+        y1="40"
+        x2="230"
+        y2="220"
+        stroke="#FFD0B5"
+        stroke-width="0.8"
+        stroke-dasharray="6 4"/>
+
+    <!-- Roads -->
+    <path
+        d="M30 130 Q120 120 170 130 Q220 140 290 125"
+        stroke="#E5C9B5"
+        stroke-width="5"
+        stroke-linecap="round"/>
+
+    <path
+        d="M140 40 Q145 100 140 160 Q135 200 140 220"
+        stroke="#E5C9B5"
+        stroke-width="4"
+        stroke-linecap="round"/>
+
+    <!-- Buildings -->
+    <rect
+        x="55"
+        y="60"
+        width="28"
+        height="22"
+        rx="4"
+        fill="#FFB88C"/>
+
+    <rect
+        x="59"
+        y="64"
+        width="6"
+        height="8"
+        rx="1"
+        fill="#FF8C5A"/>
+
+    <rect
+        x="69"
+        y="64"
+        width="6"
+        height="8"
+        rx="1"
+        fill="#FF8C5A"/>
+
+    <rect
+        x="55"
+        y="56"
+        width="28"
+        height="6"
+        rx="2"
+        fill="#FF6B35"/>
+
+    <rect
+        x="195"
+        y="155"
+        width="32"
+        height="26"
+        rx="4"
+        fill="#FFDFC8"/>
+
+    <rect
+        x="199"
+        y="160"
+        width="7"
+        height="10"
+        rx="1"
+        fill="#FF6B35"/>
+
+    <rect
+        x="211"
+        y="160"
+        width="7"
+        height="10"
+        rx="1"
+        fill="#FF6B35"/>
+
+    <rect
+        x="195"
+        y="151"
+        width="32"
+        height="6"
+        rx="2"
+        fill="#FFB627"/>
+
+    <!-- Main location pin -->
+    <g transform="translate(155 75)">
+        <circle
+            cx="0"
+            cy="0"
+            r="16"
+            fill="#FF6B35"/>
+
+        <circle
+            cx="0"
+            cy="0"
+            r="10"
+            fill="#FFFFFF"/>
+
+        <circle
+            cx="0"
+            cy="0"
+            r="5"
+            fill="#FF6B35"/>
+
+        <path
+            d="M0 16 L-6 28 L0 24 L6 28 Z"
+            fill="#FF6B35"/>
+    </g>
+
+    <!-- Secondary location pin -->
+    <g transform="translate(80 148)">
+        <circle
+            cx="0"
+            cy="0"
+            r="12"
+            fill="#FFB627"/>
+
+        <circle
+            cx="0"
+            cy="0"
+            r="7"
+            fill="#FFFFFF"/>
+
+        <circle
+            cx="0"
+            cy="0"
+            r="3.5"
+            fill="#FFB627"/>
+
+        <path
+            d="M0 12 L-4 21 L0 18 L4 21 Z"
+            fill="#FFB627"/>
+    </g>
+
+    <!-- Third location pin -->
+    <g transform="translate(248 100)">
+        <circle
+            cx="0"
+            cy="0"
+            r="11"
+            fill="#FF8C5A"/>
+
+        <circle
+            cx="0"
+            cy="0"
+            r="6.5"
+            fill="#FFFFFF"/>
+
+        <circle
+            cx="0"
+            cy="0"
+            r="3"
+            fill="#FF8C5A"/>
+
+        <path
+            d="M0 11 L-4 19 L0 16 L4 19 Z"
+            fill="#FF8C5A"/>
+    </g>
+
+    <!-- Fork and knife icon -->
+    <g transform="translate(155 75)">
+        <line
+            x1="-2.5"
+            y1="-5"
+            x2="-2.5"
+            y2="5"
+            stroke="#FFFFFF"
+            stroke-width="1.4"
+            stroke-linecap="round"/>
+
+        <line
+            x1="2.5"
+            y1="-5"
+            x2="2.5"
+            y2="5"
+            stroke="#FFFFFF"
+            stroke-width="1.4"
+            stroke-linecap="round"/>
+
+        <path
+            d="M-2.5 -5 Q0 -3 2.5 -5"
+            stroke="#FFFFFF"
+            stroke-width="1.2"
+            fill="none"/>
+    </g>
+
+    <!-- Compass -->
+    <g transform="translate(268 196)">
+        <circle
+            cx="0"
+            cy="0"
+            r="14"
+            fill="#FFFFFF"
+            stroke="#FFD0B5"
+            stroke-width="1.5"/>
+
+        <path
+            d="M0 -9 L2.5 0 L0 9 L-2.5 0 Z"
+            fill="#FF6B35"/>
+
+        <path
+            d="M-9 0 L0 -2.5 L9 0 L0 2.5 Z"
+            fill="#E5E7EB"/>
+
+        <text
+            x="0"
+            y="-11"
+            font-size="5"
+            fill="#FF6B35"
+            text-anchor="middle"
+            font-family="Poppins">
+            N
+        </text>
+    </g>
+
+</svg>
