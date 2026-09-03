@@ -4,6 +4,7 @@ using Foody_Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Foody_backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260820204146_UpdateRestaurantFields")]
+    partial class UpdateRestaurantFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,9 +32,6 @@ namespace Foody_backend.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("AdminComment")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("AverageRating")
                         .HasColumnType("float");
@@ -158,20 +158,6 @@ namespace Foody_backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 927,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Email = "admin@foody.com",
-                            FullName = "Admin",
-                            Gender = "Male",
-                            IsEmailVerified = false,
-                            PasswordHash = "$2a$11$hAAnZa0quSX5yJ7oPpLAS.oRWz1G61bxcpjkcGA6Eg08c6oe8KVse",
-                            Role = "Admin",
-                            UpdatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)
-                        });
                 });
 
             modelBuilder.Entity("RestaurantPendingUpdate", b =>
@@ -182,13 +168,13 @@ namespace Foody_backend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("AdminComment")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("HasPendingUpdate")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsUpdated")
                         .HasColumnType("bit");
 
                     b.Property<string>("PendingCuisineTags")

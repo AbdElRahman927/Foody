@@ -4,6 +4,7 @@ using Foody_Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Foody_backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260830064202_AddAdminSeedData")]
+    partial class AddAdminSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -162,13 +165,13 @@ namespace Foody_backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 927,
+                            Id = 1,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "admin@foody.com",
                             FullName = "Admin",
                             Gender = "Male",
                             IsEmailVerified = false,
-                            PasswordHash = "$2a$11$hAAnZa0quSX5yJ7oPpLAS.oRWz1G61bxcpjkcGA6Eg08c6oe8KVse",
+                            PasswordHash = "$2a$11$QarULkEpPD8tqlgd2xkCUOa.eohMIau5tvGt20m9zSgpZAjcqyKLm",
                             Role = "Admin",
                             UpdatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)
                         });

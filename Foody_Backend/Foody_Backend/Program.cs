@@ -1,4 +1,6 @@
+using Foody_backend.interfaces;
 using Foody_backend.Interfaces;
+using Foody_backend.Middleware;
 using Foody_backend.services;
 using Foody_Backend.Data;
 using Foody_Backend.Interfaces;
@@ -20,9 +22,12 @@ builder.Services.AddDbContext<AppDbContext>(options=>options.UseSqlServer(builde
 
 //authservices
 builder.Services.AddScoped<IAuthService, AuthService>();
-
 // RestaurantService
 builder.Services.AddScoped<IRestaurantService, RestaurantService>();
+// OwnerServices
+builder.Services.AddScoped<IOwnerServices, OwnerService>();
+// AdminServices
+builder.Services.AddScoped<IAdminService,AdminServices>();
 
 //jwt auth
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
@@ -86,6 +91,7 @@ builder.Services.AddSwaggerGen(options =>
 var app = builder.Build();
 
 //swagger middleware
+app.UseMiddleware<ExceptionHandlerMiddleware>();
 app.UseSwagger();
 app.UseSwaggerUI();
 

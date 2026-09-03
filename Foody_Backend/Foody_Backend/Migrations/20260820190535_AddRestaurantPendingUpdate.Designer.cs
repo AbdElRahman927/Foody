@@ -4,6 +4,7 @@ using Foody_Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Foody_backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260820190535_AddRestaurantPendingUpdate")]
+    partial class AddRestaurantPendingUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,9 +32,6 @@ namespace Foody_backend.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("AdminComment")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("AverageRating")
                         .HasColumnType("float");
@@ -51,30 +51,15 @@ namespace Foody_backend.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Facebook")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Instagram")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsVisible")
                         .HasColumnType("bit");
-
-                    b.Property<string>("MenuUrl")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OpeningHours")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("OwnerId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PriceLevel")
                         .HasColumnType("int");
@@ -92,15 +77,65 @@ namespace Foody_backend.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Website")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("OwnerId")
                         .IsUnique();
 
                     b.ToTable("Restaurants");
+                });
+
+            modelBuilder.Entity("Foody_Backend.Entities.RestaurantPendingUpdate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AdminComment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("HasPendingUpdate")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PendingCuisineTags")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PendingDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PendingName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("PendingPriceLevel")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PendingThumbnailImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RejectionReason")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RestaurantId")
+                        .IsUnique();
+
+                    b.ToTable("RestaurantsPendingUpdates");
                 });
 
             modelBuilder.Entity("Foody_Backend.Entities.User", b =>
@@ -158,91 +193,6 @@ namespace Foody_backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 927,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Email = "admin@foody.com",
-                            FullName = "Admin",
-                            Gender = "Male",
-                            IsEmailVerified = false,
-                            PasswordHash = "$2a$11$hAAnZa0quSX5yJ7oPpLAS.oRWz1G61bxcpjkcGA6Eg08c6oe8KVse",
-                            Role = "Admin",
-                            UpdatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)
-                        });
-                });
-
-            modelBuilder.Entity("RestaurantPendingUpdate", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("HasPendingUpdate")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsUpdated")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("PendingCuisineTags")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PendingDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PendingFacebook")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PendingInstagram")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PendingMenuUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PendingName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PendingOpeningHours")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PendingPhone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("PendingPriceLevel")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PendingThumbnailImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PendingWebsite")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RejectionReason")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RestaurantId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RestaurantId")
-                        .IsUnique();
-
-                    b.ToTable("RestaurantsPendingUpdates");
                 });
 
             modelBuilder.Entity("Foody_Backend.Entities.Restaurant", b =>
@@ -256,11 +206,11 @@ namespace Foody_backend.Migrations
                     b.Navigation("Owner");
                 });
 
-            modelBuilder.Entity("RestaurantPendingUpdate", b =>
+            modelBuilder.Entity("Foody_Backend.Entities.RestaurantPendingUpdate", b =>
                 {
                     b.HasOne("Foody_Backend.Entities.Restaurant", "Restaurant")
                         .WithOne("PendingUpdate")
-                        .HasForeignKey("RestaurantPendingUpdate", "RestaurantId")
+                        .HasForeignKey("Foody_Backend.Entities.RestaurantPendingUpdate", "RestaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

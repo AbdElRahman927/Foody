@@ -1,5 +1,125 @@
 [
   {
+    "ContainingType": "Foody_backend.Controllers.AdminController",
+    "Method": "LoginAdmin",
+    "RelativePath": "api/Admin/login-admin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDto",
+        "Type": "Foody_Backend.DTOs.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foody_backend.Controllers.AdminController",
+    "Method": "ApproveRestaurant",
+    "RelativePath": "api/Admin/restaurants/{id}/approve",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "adminComment",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foody_backend.Controllers.AdminController",
+    "Method": "ApproveRestaurantUpdate",
+    "RelativePath": "api/Admin/restaurants/{id}/approve-update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "adminComment",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foody_backend.Controllers.AdminController",
+    "Method": "RejectRestaurant",
+    "RelativePath": "api/Admin/restaurants/{id}/reject",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "adminComment",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foody_backend.Controllers.AdminController",
+    "Method": "RejectRestaurantUpdate",
+    "RelativePath": "api/Admin/restaurants/{id}/reject-update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "adminComment",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foody_backend.Controllers.AdminController",
+    "Method": "GetPendingNewRestaurants",
+    "RelativePath": "api/Admin/restaurants/pending-new",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foody_backend.Controllers.AdminController",
+    "Method": "GetPendingUpdates",
+    "RelativePath": "api/Admin/restaurants/pending-updates",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Foody_backend.Controllers.AuthController",
     "Method": "ForgotPassword",
     "RelativePath": "api/auth/forgot-password",
@@ -35,7 +155,7 @@
     "Parameters": [
       {
         "Name": "loginDto",
-        "Type": "Foody_backend.DTOs.LoginDto",
+        "Type": "Foody_Backend.DTOs.LoginDto",
         "IsRequired": true
       }
     ],
@@ -51,7 +171,7 @@
     "Parameters": [
       {
         "Name": "registerDTO",
-        "Type": "Foody_Backend.DTOs.RegisterDTO",
+        "Type": "Foody_Backend.DTOs.RegisterDto",
         "IsRequired": true
       }
     ],
@@ -68,6 +188,90 @@
       {
         "Name": "profileDto",
         "Type": "Foody_backend.DTOs.UserProfileDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foody_backend.Controllers.OwnerController",
+    "Method": "LoginOwner",
+    "RelativePath": "api/Owner/login-owner",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDto",
+        "Type": "Foody_Backend.DTOs.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foody_backend.Controllers.OwnerController",
+    "Method": "OwnerRegister",
+    "RelativePath": "api/Owner/register-owner",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerDTO",
+        "Type": "Foody_Backend.DTOs.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foody_backend.Controllers.OwnerController",
+    "Method": "PublishUpdate",
+    "RelativePath": "api/Owner/restaurant/publish",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foody_backend.Controllers.OwnerController",
+    "Method": "RegisterRestaurant",
+    "RelativePath": "api/Owner/restaurant/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Foody_Backend.DTOs.RestaurantRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foody_backend.Controllers.OwnerController",
+    "Method": "ToggleVisibility",
+    "RelativePath": "api/Owner/restaurant/toggle-visibility",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foody_backend.Controllers.OwnerController",
+    "Method": "UpdateRestaurant",
+    "RelativePath": "api/Owner/restaurant/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Foody_backend.DTOs.Restaurant_DTOs.RestaurantPendingDto",
         "IsRequired": true
       }
     ],

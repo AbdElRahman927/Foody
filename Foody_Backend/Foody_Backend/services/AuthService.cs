@@ -8,6 +8,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Foody_backend.DTOs.Auth_DTOs;
+using Foody_backend.Exceptions;
 
 namespace Foody_backend.services
 {
@@ -52,12 +54,13 @@ namespace Foody_backend.services
             _configuration = configuration;
         }
 
-        public async Task<AuthResponseDto?> RegisterAsync(RegisterDTO registerDto)
+        public async Task<bool?> RegisterAsync(RegisterDto registerDto)
         {
-            var existingUser = await _context.Users.FirstOrDefaultAsync(u=>u.Email ==registerDto.Email);
+            var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == registerDto.Email);
 
-            if (existingUser != null) {
-                throw new Exception("Email already exists");
+            if (existingUser != null)
+            {
+                throw new ValidationException("Email already exists");
             }
             var passwordHash = BCrypt.Net.BCrypt.HashPassword(registerDto.Password);
             var user = new User
@@ -66,6 +69,7 @@ namespace Foody_backend.services
                 Email = registerDto.Email,
                 PasswordHash = passwordHash,
                 Gender = registerDto.Gender,
+                Role = "User",
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow
             };
@@ -74,40 +78,41 @@ namespace Foody_backend.services
 
             var token = GenerateToken(user);
 
-            return new AuthResponseDto
-            {
-                Token = token,
-                Fullname= registerDto.Fullname,
-                Email= registerDto.Email,
-                Gender= registerDto.Gender,
-
-            };
+            return true;
 
 
         }
+
+       
+
         public async Task<AuthResponseDto?> LoginAsync(LoginDto loginDto)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u=>u.Email == loginDto.email);
-            if (user == null)
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginDto.email);
+            if (user == null || user.Role !="User")
             {
-                throw new Exception("Invalid Email or password");
+                throw new UnauthorizedException("Invalid Email or password");
             }
             var ispasswordValid = BCrypt.Net.BCrypt.Verify(loginDto.Password, user.PasswordHash);
             if (!ispasswordValid)
             {
-                throw new Exception("Invalid Email or password");
+                throw new UnauthorizedException("Invalid Email or password");
             }
             var token = GenerateToken(user);
 
-            return new AuthResponseDto{
+            return new AuthResponseDto
+            {
                 Token = token,
-                Fullname=user.FullName,
-                Email= user.Email,
-                Gender= user.Gender,
+                FullName = user.FullName,
+                Email = user.Email,
+                Gender = user.Gender,
+                Role = user.Role
             };
-            
+
         }
-        public async Task<bool> ForgotPasswordAsync(string email)
+
+
+     
+     public async Task<bool> ForgotPasswordAsync(string email)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u=>u.Email == email);
             if (user == null)
@@ -121,7 +126,10 @@ namespace Foody_backend.services
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
 
             if (user == null)
-                return null;
+            {
+                throw new NotFoundException("User not found");
+            }
+                
 
             return new UserProfileDto
             {
@@ -142,7 +150,9 @@ namespace Foody_backend.services
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
 
             if (user == null)
-                return null;
+            {
+                throw new NotFoundException("User not found");
+            }
 
             user.FullName = profileDto.FullName;
             user.Phone = profileDto.Phone;
@@ -166,5 +176,5 @@ namespace Foody_backend.services
                 FavoriteCuisine = user.FavoriteCuisine
             };
         }
-    }
+          }
 }

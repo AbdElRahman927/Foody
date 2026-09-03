@@ -9,5 +9,6 @@
         public double AverageRating { get; set; }
         public int PriceLevel { get; set; }
         public string? ThumbnailImageUrl { get; set; }
+        public string? Description { get; set; }  
     }
 }
